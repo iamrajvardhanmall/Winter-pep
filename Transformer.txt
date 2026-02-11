@@ -1,0 +1,17 @@
+👉 Encoders = 6 layers
+👉 Decoders = 6 layers
+
+--> So the standard model uses:
+    --> 6 stacked encoder blocks
+    --> 6 stacked decoder blocks
+
+Each encoder layer contains:
+a.) Multi-Head Self-Attention
+b.) Feed-Forward Neural Network
+c.) Residual connections + Layer Normalization
+
+Each decoder layer contains:
+a.) Masked Multi-Head Self-Attention
+b.) Encoder–Decoder (cross) Attention
+c.) Feed-Forward Neural Network
+d.) Residual connections + Layer Normalization

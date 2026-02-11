@@ -1,0 +1,2 @@
+-- Jinja Template
+-- Learning to connect css and js with bootstrap
