@@ -10,16 +10,19 @@ def RajTemplateView(Request):
     return render(Request, 'raj.html')
 
 def saveDetails(Request):
-    print(Request.POST)
-    title = Request.POST.get("title", "")
-    description = Request.POST.get("description", "")
-
-    if not title or not description:
-        messages.error(Request, "Fill all details")
-        return redirect("save_data")
-
-    # return HttpResponse(f"Title= {Request.POST.get('title')} Description = {Request.POST.get('description')}")
-    return render(Request, 'saveDetails.html')
+    if Request.method == 'POST':
+        title = Request.POST.get("title", "")
+        description = Request.POST.get("description", "")
+        
+        if not title or not description:
+            messages.error(Request, "Fill all details")
+            return redirect('raj/')  # Redirect to form page instead of rendering
+        
+        # Process valid data
+        return render(Request, 'saveDetails.html')
+    
+    # Handle GET request - show the form
+    return render(Request, 'raj.html')
 
 def base(Request):
     return render(Request, 'base.html')
