@@ -1,2 +1,8 @@
 -- Jinja Template
 -- Learning to connect css and js with bootstrap
+
+
+12-02-2026
+-- From addition in html, saving the content of the from into database. Remove it from database 
+   and editing it.
+-- Fast API: Synchronous vs Asynchronous

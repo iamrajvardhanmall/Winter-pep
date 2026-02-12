@@ -1,0 +1,5 @@
+12-02-2026
+-- mkdir FastAPI
+-- create environment LPU and activate it
+-- pip install fastapi uvicorn pydantic
+-- Run api.py file "uvicorn api:app --reload"
