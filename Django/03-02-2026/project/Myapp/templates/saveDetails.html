@@ -26,7 +26,7 @@
         <form action="{% url 'save_data' %}" method="post" class="container mx-auto card p-4">
             <div class="mb-3 alert alert-danger">Details Not saved</div>
             <div class="mb-3 alert alert-success">Details saved</div>
-            {% csrf_token %} 
+            {% csrf_token %}
 
             <div class="mb-3">
                 <label for="title">Note Title</label>
@@ -35,7 +35,8 @@
 
             <div class="mb-3">
                 <label for="desc">Note Description</label>
-                <textarea name="description" rows="5" id="desc" class="form-control" placeholder="Enter Note Description"></textarea>
+                <textarea name="description" rows="5" id="desc" class="form-control"
+                    placeholder="Enter Note Description"></textarea>
             </div>
 
             <div class="mb-3">
@@ -46,26 +47,26 @@
 
         </form>
         <div class="container">
-    <h1>Notes</h1>
+            <h1>Notes</h1>
 
-    <div class="row">
-        {% for note in notes %}
-        <div class="p-2 col-sm-2 col-md-3 col-lg-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4>{{ note.title }}</h4>
-                    <p>{{ note.description }}</p>
-                </div>
+            <div class="row">
+                {% for note in notes %}
+                <div class="p-2 col-sm-2 col-md-3 col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4>{{ note.title }}</h4>
+                            <p>{{ note.description }}</p>
+                        </div>
 
-                <div class="card-footer">
-                    <button class="btn btn-sm btn-info">Edit</button>
-                    <button class="btn btn-sm btn-danger">Delete</button>
+                        <div class="card-footer">
+                            <button class="btn btn-sm btn-info">Edit</button>
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </div>
+                    </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
-        {% endfor %}
-    </div>
-</div>
 
     </div>
 
