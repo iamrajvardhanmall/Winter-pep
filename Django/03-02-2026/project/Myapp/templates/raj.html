@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/rak.css' %}">
+
+</head>
+
+<body>
+    {% include 'components/navbar.html' %}
+
+    {% block content %}
+    <h1>This is Raj's Page</h1>
+
+
+    <div class="container py-5">
+        {% for message in messages %}
+            {% if message.tags == 'error' %}
+            <div class="mb-3 alert alert-danger">{{ message }}</div>
+            {% else %}
+            <div class="mb-3 alert alert-success">{{ message }}</div>
+            {% endif %}
+        {% endfor %}
+        
+        <form action="{% url 'save_data' %}" method="post" class="container mx-auto card p-4">
+            <div class="mb-3 alert alert-danger">Details Not saved</div>
+            <div class="mb-3 alert alert-success">Details saved</div>
+            {% csrf_token %} 
+
+            <div class="mb-3">
+                <label for="title">Note Title</label>
+                <input name="title" type="text" id="title" class="form-control" placeholder="Enter Note Title">
+            </div>
+
+            <div class="mb-3">
+                <label for="desc">Note Description</label>
+                <textarea name="description" rows="5" id="desc" class="form-control" placeholder="Enter Note Description"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <button style="width: 100%;" class="btn btn-primary">
+                    Add Note <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+    {% endblock %}
+
+    {% include 'components/footer.html' %}
+
+    <script src="{% static 'js/raj.js' %}"> </script>
+</body>
+
+</html>

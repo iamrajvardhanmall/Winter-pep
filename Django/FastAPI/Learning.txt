@@ -2,5 +2,6 @@
 -- mkdir FastAPI
 -- create environment LPU and activate it
 -- pip install fastapi uvicorn pydantic
--- Run api.py file "uvicorn api:app --reload"
+-- Run api.py file "uvicorn api:app --reload". In General, "uvicorn file_name:app_name --reload"
+
 -- http://127.0.0.1:8000/docs
